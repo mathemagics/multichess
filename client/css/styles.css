@@ -1,0 +1,180 @@
+body {
+  background-color: #F0D9C2;
+  width: 100%;
+}
+
+.letters {
+display: block;
+}
+
+.letter {
+  border: 0px;
+  margin: auto;
+  height: 18px;
+  width: 42px;
+  background-color: #1A3461;
+  color: lavender;
+
+  font-size: 15px
+}
+.filler {
+  border: 0px;
+  background-color: #1A3461;
+  height: 18px;
+  width: 23px;
+}
+
+.numbers {
+  display:inline-block;
+  width: 20px;
+  height: 340px;
+}
+.number {
+  border: 0px;
+  width:15px;
+  height: 42px;
+  font-size: 15px;
+  background-color: #1A3461;
+  color: lavender;
+
+}
+
+#gameDiv {
+  left: 50%;
+  margin-left: -195px;
+  padding: 5px;
+  position: absolute;
+  display: inline-block;
+  background-color: #1A3461;
+  height: 393px;
+  width: 390px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+#chessboard {
+
+  -moz-transform: scale(1, -1);
+  -webkit-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+
+  margin-top: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  border: 2px solid white;
+  border-collapse: collapse;
+  cursor: pointer;
+}
+
+tr {
+  padding: 0px;
+}
+
+td {
+  height:40px;
+  width:40px;
+  padding: 0px;
+  border: 1px solid black;
+  float: left;
+  text-align: center;
+  font-size: 32px;
+}
+.whitesq {
+  -moz-transform: scale(1, -1);
+  -webkit-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+  background-color: #F0D9C2;
+}
+.blacksq {
+  -moz-transform: scale(1, -1);
+  -webkit-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+  background-color: #C98F55;
+}
+
+#checkmate {
+  z-index: 1;
+  display: none;
+  position:absolute;
+  top: 25px;
+  left: 25px;
+  height: 348px;
+  width: 348px;
+  background-color: grey;
+  opacity: 0.9;
+}
+
+#cover {
+  z-index: 1;
+  display: none;
+  position:absolute;
+  top: 25px;
+  left: 25px;
+  height: 348px;
+  width: 348px;
+  background-color: grey;
+  opacity: 0.9;
+}
+.promotion-box {
+  position:absolute;
+  top:120px;
+  left: 50px;
+  text-align: center;
+  background-color: #1A3461;
+  height:60px;
+  width: 250px;
+  position: relative;
+  border: 2px solid white;
+}
+
+.piece {
+  margin-top: 6px;
+  display: inline-block;
+  height:44px;
+  width:44px;
+  border: 2px solid white;
+}
+
+.piece-icon {
+  margin-top: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  height:40px;
+  width:40px;
+  background-color: #F0D9C2;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.text-box {
+  font-weight: bolder;
+  line-height: 30px;
+  font-family: arial;
+  margin: auto;
+  width: 200px;
+  height: 30px;
+  margin-top: 12px;
+  background-color: #F0D9C2;
+  border: 2px solid white;
+  font-size: 18px;
+}
+
+#chat-text {
+  background-color: white;
+  margin-top: 20px;
+  width: 380px;
+  height: 100px;
+  overflow-y: scroll;
+  border: 1px solid black;
+}
+
+#chat-input {
+  width:380px;
+}

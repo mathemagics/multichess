@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Chess</title>
+    <link rel="stylesheet" href="client/css/styles.css">
+  </head>
+  <body>
+
+    <div id="signDiv">
+	     Username: <input id="signDiv-username" type="text"></input><br>
+	      Password: <input id="signDiv-password" type="password"></input>
+	       <button id="signDiv-signIn">Sign In</button>
+	       <button id="signDiv-signUp">Sign Up</button>
+    </div>
+
+
+
+    <div id="gameDiv" style="display: none">
+      <div class="blocker" id="checkmate">
+        <div class="promotion-box">
+          <div class="text-box">
+          CHECKMATE!
+          </div>
+        </div>
+      </div>
+
+      <div id="cover">
+      <div class="promotion-box">
+        <div class="piece">
+          <div class="piece-icon" id ="queen">
+            &#9813;
+          </div>
+        </div>
+        <div class="piece">
+          <div class="piece-icon" id ="rook">
+            &#9814;
+          </div>
+
+        </div>
+        <div class="piece">
+          <div class="piece-icon" id="bishop">
+            &#9815;
+          </div>
+
+        </div>
+        <div class="piece">
+          <div class="piece-icon" id="knight">
+            &#9816;
+          </div>
+
+        </div>
+      </div>
+      </div>
+
+      <table id="letters">
+        <tr>
+          <td class="filler"></td>
+          <td class="letter">a</td>
+          <td class="letter">b</td>
+          <td class="letter">c </td>
+          <td class="letter">d</td>
+          <td class="letter">e</td>
+          <td class="letter">f</td>
+          <td class="letter">g</td>
+          <td class="letter">h</td>
+          <td class="filler"></td>
+        </tr>
+      </table>
+      <table class="numbers">
+        <tr>
+          <td class="number"><p>1</p></td>
+          <td class="number"><p>2</p></td>
+          <td class="number"><p>3</p></td>
+          <td class="number"><p>4</p></td>
+          <td class="number"><p>5</p></td>
+          <td class="number"><p>6</p></td>
+          <td class="number"><p>7</p></td>
+          <td class="number"><p>8</p></td>
+        </tr>
+      </table>
+      <table id="chessboard">
+        <tr>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        </tr>
+        <tr>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        </tr>
+        <tr>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        </tr>
+        <tr>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        </tr>
+        <tr>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        </tr>
+        <tr>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        </tr>
+        <tr>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        </tr>
+        <tr>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        <td class="blacksq"> </td>
+        <td class="whitesq"> </td>
+        </tr>
+      </table>
+
+      <table class="numbers">
+        <tr>
+          <td class="number"><p>1</p></td>
+          <td class="number"><p>2</p></td>
+          <td class="number"><p>3</p></td>
+          <td class="number"><p>4</p></td>
+          <td class="number"><p>5</p></td>
+          <td class="number"><p>6</p></td>
+          <td class="number"><p>7</p></td>
+          <td class="number"><p>8</p></td>
+        </tr>
+      </table>
+      <table id="letters">
+        <tr>
+          <td class="filler"></td>
+          <td class="letter">a</td>
+          <td class="letter">b</td>
+          <td class="letter">c </td>
+          <td class="letter">d</td>
+          <td class="letter">e</td>
+          <td class="letter">f</td>
+          <td class="letter">g</td>
+          <td class="letter">h</td>
+          <td class="filler"></td>
+        </tr>
+      </table>
+
+      <div id="chat-text">
+          <div>Hello!</div>
+      </div>
+
+      <form id="chat-form">
+          <input id="chat-input" type="text"></input>
+      </form>
+
+  </div>
+
+    <div id="promotion">
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="client/js/pieces.js"></script>
+  <script src="client/js/chess.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+  <script>
+      var socket = io();
+
+      //sign
+    var signDiv = document.getElementById('signDiv');
+    var signDivUsername = document.getElementById('signDiv-username');
+    var signDivSignIn = document.getElementById('signDiv-signIn');
+    var signDivSignUp = document.getElementById('signDiv-signUp');
+    var signDivPassword = document.getElementById('signDiv-password');
+    var gameDiv = document.getElementById('gameDiv');
+
+    signDivSignIn.onclick = function(){
+        socket.emit('signIn',{username:signDivUsername.value,password:signDivPassword.value});
+    }
+    signDivSignUp.onclick = function(){
+        socket.emit('signUp',{username:signDivUsername.value,password:signDivPassword.value});
+    }
+    socket.on('signInResponse',function(data){
+        if(data.success){
+            signDiv.style.display = 'none';
+            gameDiv.style.display = 'inline-block';
+        } else
+            alert("Sign in unsuccessul.");
+    });
+    socket.on('signUpResponse',function(data){
+        if(data.success){
+            alert("Sign up successul.");
+        } else
+            alert("Sign up unsuccessul.");
+    });
+
+      //chat
+      var chatText = document.getElementById('chat-text');
+      var chatInput = document.getElementById('chat-input');
+      var chatForm = document.getElementById('chat-form');
+
+      socket.on('addToChat',function(data){
+          chatText.innerHTML += '<div>' + data + '</div>';
+          chatText.scrollTop = chatText.scrollHeight
+      });
+      socket.on('evalAnswer',function(data){
+          console.log(data);
+      });
+
+      chatForm.onsubmit = function(e){
+          e.preventDefault();
+          if(chatInput.value[0] === '/')
+              socket.emit('evalServer',chatInput.value.slice(1));
+          else
+              socket.emit('sendMsgToServer',chatInput.value);
+          chatInput.value = '';
+      }
+  </script>
+
+  </body>
+</html>
